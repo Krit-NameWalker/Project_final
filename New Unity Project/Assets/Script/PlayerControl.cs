@@ -67,7 +67,7 @@ public class PlayerControl : MonoBehaviour {
     void SetCountText()
     {
         CountText.text = "Count: " + count.ToString();
-        if (count >= 6)
+        if (count >= 5)
         {
             GameWinPanel.SetActive(true);
             Time.timeScale = 0;
