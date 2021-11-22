@@ -1843,9 +1843,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceAccepted: 6000
-  speed: 50
+  speed: 80
   CountText: {fileID: 217737183}
   GameWinPanel: {fileID: 822823057}
+  gravityValue: 2
   count: 0
 --- !u!54 &837701592
 Rigidbody:

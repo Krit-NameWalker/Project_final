@@ -11,6 +11,8 @@ public class PlayerControl : MonoBehaviour {
     private Rigidbody rigid;
     public Text CountText;
     public GameObject GameWinPanel;
+    public float gravityValue = 2;
+
 
 
     private Rigidbody rb;
@@ -48,6 +50,8 @@ public class PlayerControl : MonoBehaviour {
         {
             rigid.AddForce(-Vector3.forward * speed);
         }
+
+        rigid.AddForce(Physics.gravity * rigid.mass * gravityValue);
     }
 
     void OnTriggerEnter(Collider other)
