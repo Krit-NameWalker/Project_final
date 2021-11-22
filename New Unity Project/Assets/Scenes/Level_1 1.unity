@@ -1843,7 +1843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceAccepted: 6000
-  speed: 50
+  speed: 80
   CountText: {fileID: 217737183}
   GameWinPanel: {fileID: 822823057}
   gravityValue: 2
@@ -2490,8 +2490,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070802879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.51836, y: 33.20609, z: -37.423317}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.2, y: 35.652, z: -49.185}
+  m_LocalScale: {x: 1.12, y: 1.12, z: 1.12}
   m_Children:
   - {fileID: 171202611}
   - {fileID: 1244840276}
