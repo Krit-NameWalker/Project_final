@@ -1001,7 +1001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b00a06e965af79a4c917d2b450d64c54, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -94.4
+      value: -111.9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b00a06e965af79a4c917d2b450d64c54, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1139,7 +1139,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 480029653}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 837701591}
+        m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
+        m_MethodName: gotoNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &480029653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1742,7 +1754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &822823058
 MonoBehaviour:
   m_ObjectHideFlags: 0
