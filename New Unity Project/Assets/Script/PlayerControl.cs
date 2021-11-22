@@ -67,11 +67,16 @@ public class PlayerControl : MonoBehaviour {
     void SetCountText()
     {
         CountText.text = "Count: " + count.ToString();
-        if (count >= 8)
+        if (count >= 6)
         {
             GameWinPanel.SetActive(true);
-            SceneManager.LoadScene(nextSceneToLoad);
+            Time.timeScale = 0;
         }
+    }
+    public void gotoNextLevel()
+    {
+        SceneManager.LoadScene(nextSceneToLoad);
+        Time.timeScale = 1;
     }
 
     void OnCollisionEnter(Collision c)
