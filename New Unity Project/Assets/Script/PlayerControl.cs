@@ -1,39 +1,53 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour {
 
     
     public float forceAccepted;
     public float speed;
-    public Text countText;
-    public GameObject WinText;
+    private Rigidbody rigid;
+    public Text CountText;
+    public GameObject GameWinPanel;
 
 
-
-   
     private Rigidbody rb;
     public int count;
+    private int nextSceneToLoad;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rigid = gameObject.GetComponent<Rigidbody> ();
         count = 0;
         SetCountText();
-        WinText.SetActive(false);
+        GameWinPanel.SetActive(false);
+        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     void FixedUpdate()
     {
-        
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        if(Input.GetAxis("Horizontal") > 0)
+        {
+            rigid.AddForce(Vector3.right * speed);
+        }
 
-       
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        else if (Input.GetAxis("Horizontal") < 0)
+        {
+            rigid.AddForce(-Vector3.right * speed);
+        }
 
-        rb.AddForce(movement * speed);
+        if(Input.GetAxis("Vertical") > 0)
+        {
+            rigid.AddForce(Vector3.forward * speed);
+        }
+
+        else if (Input.GetAxis("Vertical") < 0)
+        {
+            rigid.AddForce(-Vector3.forward * speed);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -48,10 +62,11 @@ public class PlayerControl : MonoBehaviour {
 
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString();
-        if (count >= 6)
+        CountText.text = "Count: " + count.ToString();
+        if (count >= 2)
         {
-            WinText.SetActive(true);
+            GameWinPanel.SetActive(true);
+            SceneManager.LoadScene(nextSceneToLoad);
         }
     }
 
