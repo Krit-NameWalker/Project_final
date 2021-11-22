@@ -67,7 +67,7 @@ public class PlayerControl : MonoBehaviour {
     void SetCountText()
     {
         CountText.text = "Count: " + count.ToString();
-        if (count >= 2)
+        if (count >= 8)
         {
             GameWinPanel.SetActive(true);
             SceneManager.LoadScene(nextSceneToLoad);

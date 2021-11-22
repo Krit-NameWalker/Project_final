@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerControl gameRestart;
     void GameRestart()
     {
-        if (playerControlScpt.count == 12)
+        if (playerControlScpt.count == 8)
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
