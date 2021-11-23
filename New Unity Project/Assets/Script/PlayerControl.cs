@@ -19,7 +19,6 @@ public class PlayerControl : MonoBehaviour
     private ParticleSystem.EmissionModule walkParEmission;
 
 
-
     private Rigidbody rb;
     public int count;
     private int nextSceneToLoad;
@@ -103,7 +102,6 @@ public class PlayerControl : MonoBehaviour
             rb.AddForce(dir * forceAccepted);
         }
     }
-
 }
 
 
