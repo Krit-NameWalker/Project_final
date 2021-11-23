@@ -9,6 +9,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] SphereCollider playerSphere;
     [SerializeField] Rigidbody playerRigid;
     [SerializeField] PlayerControl gameRestart;
+
+    public AudioSource song;
+
+    public void BGsoundtrack()
+    {
+        song.Play();
+    }
     void GameRestart()
     {
         if (playerControlScpt.count == 8)
