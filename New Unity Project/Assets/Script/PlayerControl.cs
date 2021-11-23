@@ -10,7 +10,6 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody rigid;
     public Text CountText;
     public GameObject GameWinPanel;
-    public GameObject button_next;
     public float gravityValue = 2;
 
 
@@ -31,7 +30,6 @@ public class PlayerControl : MonoBehaviour
         count = 0;
         SetCountText();
         GameWinPanel.SetActive(false);
-        button_next.SetActive(false);
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
 
         walkParEmission = walkPar.emission;
@@ -82,7 +80,6 @@ public class PlayerControl : MonoBehaviour
         if (count >= 1)
         {
             GameWinPanel.SetActive(true);
-            button_next.SetActive(true);
             Time.timeScale = 0;
         }
     }
