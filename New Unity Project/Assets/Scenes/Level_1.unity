@@ -2305,7 +2305,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -15}
+  m_AnchoredPosition: {x: 108, y: -38}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168845429
@@ -7357,6 +7357,7 @@ MonoBehaviour:
   playerSphere: {fileID: 837701593}
   playerRigid: {fileID: 837701592}
   gameRestart: {fileID: 837701591}
+  song: {fileID: 0}
 --- !u!4 &1378270946
 Transform:
   m_ObjectHideFlags: 0
