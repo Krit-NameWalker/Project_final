@@ -3,9 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class PlayerControl : MonoBehaviour {
-
-    
+public class PlayerControl : MonoBehaviour 
+{
     public float forceAccepted;
     public float speed;
     private Rigidbody rigid;
@@ -67,7 +66,7 @@ public class PlayerControl : MonoBehaviour {
     void SetCountText()
     {
         CountText.text = "Count: " + count.ToString();
-        if (count >= 5)
+        if (count >= 6)
         {
             GameWinPanel.SetActive(true);
             Time.timeScale = 0;
