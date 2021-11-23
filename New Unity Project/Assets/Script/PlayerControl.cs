@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+
 public class PlayerControl : MonoBehaviour {
 
     
@@ -13,8 +14,9 @@ public class PlayerControl : MonoBehaviour {
     public GameObject GameWinPanel;
     public float gravityValue = 2;
 
+    
 
-
+    
     private Rigidbody rb;
     public int count;
     private int nextSceneToLoad;
@@ -25,7 +27,7 @@ public class PlayerControl : MonoBehaviour {
         rigid = gameObject.GetComponent<Rigidbody> ();
         count = 0;
         SetCountText();
-        GameWinPanel.SetActive(false);
+        GameWinPanel.SetActive(true);
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
