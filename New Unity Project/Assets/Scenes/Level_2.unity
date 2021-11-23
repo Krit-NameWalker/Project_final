@@ -1531,7 +1531,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 546904009}
         m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
         m_MethodName: gotoNextLevel
         m_Mode: 1
@@ -4041,10 +4041,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e889c5603500840bed8d56f3614994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerControlScpt: {fileID: 0}
-  playerSphere: {fileID: 0}
-  playerRigid: {fileID: 0}
-  gameRestart: {fileID: 0}
+  playerControlScpt: {fileID: 546904009}
+  playerSphere: {fileID: 546904010}
+  playerRigid: {fileID: 546904011}
+  gameRestart: {fileID: 546904009}
 --- !u!4 &1378270946
 Transform:
   m_ObjectHideFlags: 0
