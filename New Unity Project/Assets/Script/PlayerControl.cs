@@ -23,6 +23,8 @@ public class PlayerControl : MonoBehaviour
     public int count;
     private int nextSceneToLoad;
 
+    public AudioSource scoure;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -70,6 +72,7 @@ public class PlayerControl : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             count = count + 1;
+            scoure.Play();
             SetCountText();
         }
     }
@@ -77,7 +80,7 @@ public class PlayerControl : MonoBehaviour
     void SetCountText()
     {
         CountText.text = "Score: " + count.ToString();
-        if (count >= 1)
+        if (count >= 6)
         {
             GameWinPanel.SetActive(true);
             Time.timeScale = 0;
