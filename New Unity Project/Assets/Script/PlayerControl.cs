@@ -14,6 +14,12 @@ public class PlayerControl : MonoBehaviour
     public float gravityValue = 2;
 
 
+    // emission part
+    public ParticleSystem walkPar;
+    public int walkParRate = 12;
+    private ParticleSystem.EmissionModule walkParEmission;
+
+
 
     private Rigidbody rb;
     public int count;
@@ -28,6 +34,8 @@ public class PlayerControl : MonoBehaviour
         GameWinPanel.SetActive(false);
         button_next.SetActive(false);
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+
+        walkParEmission = walkPar.emission;
     }
 
     void FixedUpdate()
@@ -35,21 +43,25 @@ public class PlayerControl : MonoBehaviour
         if(Input.GetAxis("Horizontal") > 0)
         {
             rigid.AddForce(Vector3.right * speed);
+            walkParEmission.rateOverTime = walkParRate;
         }
 
         else if (Input.GetAxis("Horizontal") < 0)
         {
             rigid.AddForce(-Vector3.right * speed);
+            walkParEmission.rateOverTime = walkParRate;
         }
 
         if(Input.GetAxis("Vertical") > 0)
         {
             rigid.AddForce(Vector3.forward * speed);
+            walkParEmission.rateOverTime = walkParRate;
         }
 
         else if (Input.GetAxis("Vertical") < 0)
         {
             rigid.AddForce(-Vector3.forward * speed);
+            walkParEmission.rateOverTime = walkParRate;
         }
 
         rigid.AddForce(Physics.gravity * rigid.mass * gravityValue);
