@@ -3,9 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class PlayerControl : MonoBehaviour {
-
-    
+public class PlayerControl : MonoBehaviour 
+{
     public float forceAccepted;
     public float speed;
     private Rigidbody rigid;
@@ -14,10 +13,17 @@ public class PlayerControl : MonoBehaviour {
     public float gravityValue = 2;
 
 
+    // emission part
+    public ParticleSystem walkPar;
+    public int walkParRate = 12;
+    private ParticleSystem.EmissionModule walkParEmission;
+
 
     private Rigidbody rb;
     public int count;
     private int nextSceneToLoad;
+
+    public AudioSource scoure;
 
     void Start()
     {
@@ -27,6 +33,8 @@ public class PlayerControl : MonoBehaviour {
         SetCountText();
         GameWinPanel.SetActive(false);
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+
+        walkParEmission = walkPar.emission;
     }
 
     void FixedUpdate()
@@ -34,21 +42,25 @@ public class PlayerControl : MonoBehaviour {
         if(Input.GetAxis("Horizontal") > 0)
         {
             rigid.AddForce(Vector3.right * speed);
+            walkParEmission.rateOverTime = walkParRate;
         }
 
         else if (Input.GetAxis("Horizontal") < 0)
         {
             rigid.AddForce(-Vector3.right * speed);
+            walkParEmission.rateOverTime = walkParRate;
         }
 
         if(Input.GetAxis("Vertical") > 0)
         {
             rigid.AddForce(Vector3.forward * speed);
+            walkParEmission.rateOverTime = walkParRate;
         }
 
         else if (Input.GetAxis("Vertical") < 0)
         {
             rigid.AddForce(-Vector3.forward * speed);
+            walkParEmission.rateOverTime = walkParRate;
         }
 
         rigid.AddForce(Physics.gravity * rigid.mass * gravityValue);
@@ -60,14 +72,15 @@ public class PlayerControl : MonoBehaviour {
         {
             other.gameObject.SetActive(false);
             count = count + 1;
+            scoure.Play();
             SetCountText();
         }
     }
 
     void SetCountText()
     {
-        CountText.text = "Count: " + count.ToString();
-        if (count >= 5)
+        CountText.text = "Score: " + count.ToString();
+        if (count >= 6)
         {
             GameWinPanel.SetActive(true);
             Time.timeScale = 0;
@@ -92,7 +105,6 @@ public class PlayerControl : MonoBehaviour {
             rb.AddForce(dir * forceAccepted);
         }
     }
-
 }
 
 
